@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever ❤️</title>
+<style>
+body{
+ background:linear-gradient(#ffe6eb,#fff);
+ font-family:Segoe UI;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ height:100vh;
+}
+.box{
+ background:white;
+ padding:30px;
+ border-radius:20px;
+ text-align:center;
+ max-width:420px;
+ box-shadow:0 15px 35px rgba(255,0,80,0.3);
+}
+h2{color:#ff2f68;}
+#counter{font-size:18px;color:#444;margin:15px 0;}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Our Love Duration ⏳</h2>
+<div id="counter"></div>
+
+<p>
+No matter how many days pass,<br>
+I still want to choose you.<br>
+Again. Again. Always ❤️
+</p>
+</div>
+
+<script>
+const start = new Date("2025-11-21T00:00:00");
+
+function update(){
+ const now = new Date();
+ const diff = now - start;
+
+ const days = Math.floor(diff/(1000*60*60*24));
+ const hrs = Math.floor((diff/(1000*60*60))%24);
+ const mins = Math.floor((diff/(1000*60))%60);
+
+ document.getElementById("counter").innerHTML =
+ `${days} days ${hrs} hours ${mins} minutes of us 💕`;
+}
+setInterval(update,1000);
+update();
+</script>
+
+</body>
+</html>
