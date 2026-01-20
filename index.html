@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 2 Months ❤️</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(to bottom, #ffe6eb, #fff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 30px 20px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(255, 0, 100, 0.2);
+        max-width: 400px;
+        width: 100%;
+        z-index: 2;
+    }
+
+    h1 {
+        color: #ff3366;
+        margin-bottom: 15px;
+        font-size: 26px;
+    }
+
+    #typing {
+        font-size: 18px;
+        color: #444;
+        min-height: 60px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background: #ff3366;
+        color: white;
+        border: none;
+        padding: 12px 22px;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #e6004c;
+        transform: scale(1.05);
+    }
+
+    #hiddenMessage {
+        display: none;
+        margin-top: 20px;
+        font-size: 18px;
+        color: #ff3366;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: absolute;
+        bottom: -20px;
+        color: #ff5c8a;
+        font-size: 20px;
+        animation: float 6s linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 0.8;
+        }
+        100% {
+            transform: translateY(-110vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 22px;
+        }
+        #typing {
+            font-size: 16px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Happy 2 Months Baby ❤️</h1>
+    <div id="typing"></div>
+
+    <button onclick="showMessage()">Click Me ❤️</button>
+
+    <div id="hiddenMessage">
+        These 2 months with you are the most beautiful part of my life 💕<br>
+        I promise to love you more every single day 🥰
+    </div>
+</div>
+
+<script>
+    // Typing animation
+    const text = "Every moment with you feels magical... 💖 I am so grateful to have you in my life.";
+    let index = 0;
+    const speed = 60;
+
+    function typeEffect() {
+        if (index < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, speed);
+        }
+    }
+    typeEffect();
+
+    // Show hidden message
+    function showMessage() {
+        document.getElementById("hiddenMessage").style.display = "block";
+    }
+
+    // Floating hearts generator
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+    }
+
+    setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
