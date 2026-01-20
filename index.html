@@ -1,185 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dikshit ❤️ Bhoomi</title>
-
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
 body{
-    min-height:100vh;
-    background: linear-gradient(to bottom, #ffd6e0, #fff);
+    margin:0;
+    height:100vh;
+    background:linear-gradient(#ffd6e0,#fff);
     display:flex;
     justify-content:center;
     align-items:center;
+    font-family:Segoe UI;
     overflow:hidden;
-    padding:20px;
 }
-
-.container{
-    background:rgba(255,255,255,0.9);
-    max-width:420px;
-    width:100%;
-    padding:30px 20px;
-    border-radius:22px;
+.box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
     text-align:center;
-    box-shadow:0 15px 40px rgba(255,0,90,0.25);
-    z-index:2;
+    max-width:400px;
+    box-shadow:0 15px 35px rgba(255,0,80,0.3);
 }
-
-h1{
-    color:#ff2f68;
-    font-size:26px;
-    margin-bottom:8px;
-}
-
-.names{
-    font-size:20px;
-    color:#ff5c8a;
-    margin-bottom:10px;
-}
-
-.date{
-    font-size:14px;
-    color:#666;
-    margin-bottom:20px;
-}
-
-#typing{
-    font-size:17px;
-    color:#444;
-    min-height:80px;
-    margin-bottom:25px;
-}
-
-button{
-    background:#ff2f68;
-    color:#fff;
-    border:none;
+h1{color:#ff2f68;}
+.names{font-size:20px;color:#ff5c8a;}
+#type{min-height:70px;color:#444;margin:20px 0;}
+a{
+    display:inline-block;
     padding:12px 25px;
-    font-size:16px;
+    background:#ff2f68;
+    color:white;
     border-radius:30px;
-    cursor:pointer;
-    transition:0.3s;
+    text-decoration:none;
 }
-
-button:hover{
-    background:#e6004c;
-    transform:scale(1.05);
-}
-
-#hidden{
-    display:none;
-    margin-top:22px;
-    font-size:17px;
-    color:#ff2f68;
-    animation:fadeIn 1.2s ease;
-}
-
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(10px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
-/* Floating Hearts */
 .heart{
     position:absolute;
     bottom:-20px;
-    color:#ff4d7e;
     animation:float 6s linear infinite;
-    opacity:0.7;
 }
-
 @keyframes float{
-    0%{transform:translateY(0) scale(1);}
-    100%{transform:translateY(-120vh) scale(1.6); opacity:0;}
-}
-
-/* Soft glow */
-.glow{
-    animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-    from{text-shadow:0 0 5px #ff7aa2;}
-    to{text-shadow:0 0 15px #ff2f68;}
-}
-
-@media(max-width:480px){
-    h1{font-size:23px;}
-    #typing{font-size:16px;}
+    to{transform:translateY(-120vh);opacity:0;}
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <h1 class="glow">Happy 2 Months Baby ❤️</h1>
-
-    <div class="names">Dikshit 💞 Bhoomi</div>
-
-    <div class="date">Our story began on <b>21 November 2025</b></div>
-
-    <div id="typing"></div>
-
-    <button onclick="showLove()">Click Me ❤️</button>
-
-    <div id="hidden">
-        Bhoomi 🥺❤️<br><br>
-        From the day we started talking on 21 November 2025,<br>
-        my life slowly started feeling warmer, calmer and happier.<br><br>
-        These 2 months are not just days for me,<br>
-        they are memories, feelings, late thoughts and silent smiles.<br><br>
-        I may not be perfect,<br>
-        but my love for you is real, pure and endless.<br><br>
-        I choose you — today, tomorrow and always 💕
-    </div>
+<div class="box">
+<h1>Happy 2 Months Baby ❤️</h1>
+<div class="names">Dikshit 💞 Bhoomi</div>
+<div id="type"></div>
+<a href="story.html">Our Story 💕</a>
 </div>
 
 <script>
-// Typing text
-const message = 
-"Two months ago, destiny connected our hearts... 💖\n" +
-"Every message, every smile, every moment with you feels special.\n" +
-"You are not just my love, you are my comfort, my peace, my home 🥰";
-
-let i = 0;
-const typingDiv = document.getElementById("typing");
-
-function typingEffect(){
-    if(i < message.length){
-        typingDiv.innerHTML += message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
-        i++;
-        setTimeout(typingEffect, 55);
-    }
+const msg="21 November 2025...\nThe day when talking to you slowly became my favorite habit 💖";
+let i=0;
+function typing(){
+ if(i<msg.length){
+  document.getElementById("type").innerHTML+=msg[i]=="\n"?"<br>":msg[i];
+  i++; setTimeout(typing,55);
+ }
 }
-typingEffect();
+typing();
 
-// Hidden love message
-function showLove(){
-    document.getElementById("hidden").style.display = "block";
-}
-
-// Hearts
-function createHeart(){
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.fontSize = Math.random()*22 + 14 + "px";
-    heart.style.animationDuration = Math.random()*3 + 4 + "s";
-    document.body.appendChild(heart);
-
-    setTimeout(()=>heart.remove(),7000);
-}
-setInterval(createHeart, 350);
+setInterval(()=>{
+ let h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="❤️";
+ h.style.left=Math.random()*100+"vw";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),6000);
+},400);
 </script>
 
 </body>
