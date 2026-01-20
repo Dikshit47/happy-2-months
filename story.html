@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story ❤️</title>
+<style>
+body{
+ background:#fff0f5;
+ font-family:Segoe UI;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ height:100vh;
+}
+.card{
+ background:white;
+ padding:30px;
+ border-radius:20px;
+ max-width:420px;
+ text-align:center;
+ box-shadow:0 10px 30px rgba(255,0,90,0.3);
+}
+p{color:#444;font-size:17px;}
+button{
+ margin-top:20px;
+ background:#ff2f68;
+ color:white;
+ border:none;
+ padding:12px 25px;
+ border-radius:25px;
+}
+.note{
+ display:none;
+ margin-top:20px;
+ color:#ff2f68;
+ animation:fade 1s;
+}
+@keyframes fade{from{opacity:0;}to{opacity:1;}}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h2>Dikshit ❤️ Bhoomi</h2>
+
+<p>
+We didn’t plan this…<br>
+We didn’t expect this…<br>
+But somehow, we felt this 🥺❤️<br><br>
+
+Talking to you feels safe.<br>
+Missing you feels real.<br>
+And loving you feels natural 💕
+</p>
+
+<button onclick="show()">Tap for a Love Note 💌</button>
+
+<div class="note" id="note">
+You are not an option in my life,<br>
+you are my choice — every single day 🫶
+</div>
+
+<br><br>
+<a href="forever.html">Forever Us ⏳</a>
+</div>
+
+<script>
+function show(){
+ document.getElementById("note").style.display="block";
+}
+</script>
+
+</body>
+</html>
